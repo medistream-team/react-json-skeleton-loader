@@ -5,7 +5,7 @@ const SkeletonLoader: React.FC = (props) => {
   const [skeletonLoader, setSkeletonLoader] = useState<string[][]>([]);
 
   const buttonHandler = useCallback(() => {
-    setSkeletonLoader([["box", "text:5", "box"]])
+    setSkeletonLoader([["box", "text:5"]])
   },[skeletonLoader])
   console.log(skeletonLoader);
 
@@ -28,16 +28,20 @@ const SkeletonLoader: React.FC = (props) => {
             // tiem의 요소들 중에 "text" 가 존재할 경우 && "text : 5 " 와 같은 형식일 경우 해당 콜론 뒤의 숫자 만큼 for 문이 돌아가는 걸 상정 해야함
             if (element.includes("text")) {
               if (element.includes(":")) {
+                
                 // const elementName: string = element.split(":")[0];
                 const count: number = Number(element.split(":")[1]);
                 // const elementChildren: string[] = [];
                 // for (let i = 0; i < count; i++) {
                 //   elementChildren.push(elementName);
                 // }
-                for (let i = 0; i < count; i++) {
-                  console.log(i);
-                  <S.Text key={index}/>;
-                }
+                console.log(Array(count).fill(0).map((v, i) => v +i))
+
+                return [...Array(count).keys()].map(i => <S.Text key={i}/>)
+                // for (let i = 0; i < count; i++) {
+                //   console.log(i);
+                //   <S.Text key={index}/>;
+                // }
               }
             }
             return <div key={index}/>;
