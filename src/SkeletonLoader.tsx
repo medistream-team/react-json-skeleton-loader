@@ -7,7 +7,7 @@ const SkeletonLoader: React.FC = (props) => {
 
   const buttonHandler = useCallback(() => {
     setSkeletonLoader([
-      ["box", "title + text:20"],
+      ["box", "title + text:4"],
       ["text:5"]
     ]);
   }, [skeletonLoader]);
@@ -71,13 +71,14 @@ const S = {
       flex-grow: 0;
       margin: 0 10px;
       max-width: 700px;
-      margin-bottom: 20px;
+      margin-bottom: -10px;
     }
     &.two{
+      padding: 20px 0px;
       flex-grow: 1;
       margin: 0 10px;
       max-width: 700px;
-      margin-bottom: 20px;
+      margin-bottom: -10px;
     }
   `,
   // skeleton box 의 스타일 컴포넌트
@@ -94,7 +95,7 @@ const S = {
     background-color: rgb(204, 204, 204);
     width: 30%;
     min-width: 100px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   `,
   // skeleton text 의 스타일 컴포넌트
   Text: styled.div`
@@ -102,10 +103,10 @@ const S = {
     border-radius: 3px;
     background-color: rgb(204, 204, 204);
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     &:last-child{
       height: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: rgb(204, 204, 204);
     width: 70%;
     }
