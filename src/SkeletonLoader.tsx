@@ -7,7 +7,7 @@ const SkeletonLoader: React.FC = (props) => {
 
   const buttonHandler = useCallback(() => {
     setSkeletonLoader([
-      ["box", "title + text:4"],
+      ["circle", "box", "title + text:5"],
       ["text:5"]
     ]);
   }, [skeletonLoader]);
@@ -16,6 +16,9 @@ const SkeletonLoader: React.FC = (props) => {
     // item의 요소들 중에 "box" 가 존재할 경우
     if (InitialValue.includes("box")) {
       return <S.Box />;
+    }
+    if (InitialValue.includes("circle")) {
+      return <S.Circle />
     }
     // title + text:x 와같은 형식이 존재할 경우 + 를 제외하고 title 과 text 요소가 생성됨 => text 같은경우에는 뒤으 Number와같은 수의 요소가 생성됨
     return InitialValue
@@ -46,12 +49,19 @@ const SkeletonLoader: React.FC = (props) => {
       {/* skeletonLoader 안의 값으로 배열들이 있고 해당 배열 은 map 메소드를 이용해 item 으로 취급된다. 각 item 의 값 안에 'box','title', 'text' 등 이 존재할 경우에 각각의 스타일을 가진 요소들이 생성이 되는 로직 // item = ['box', 'title:5']*/}
       {skeletonLoader?.map((item: string[], index) => (
         <S.Total key={index}>
-          {item?.map((element: string, index) => (<S.Container className={element === 'box' ? 'own' : 'two'} key={index}>{boxContainer(element)}</S.Container>))}
+          {item?.map((element: string, index) => (<S.Container className={(element === 'box' || element === 'circle') ? 'own' : 'two'} key={index}>{boxContainer(element)}</S.Container>))}
         </S.Total>
       ))}
     </div>
   );
 };
+
+
+const loading = keyframes`
+  100% {
+    transform: translateX(100%);
+  }
+`;
 
 const S = {
   //skeleton 전체를 감싸는 스타일 컴포넌트
@@ -67,18 +77,20 @@ const S = {
     align-items: center;
     max-width: 700px;
     margin: 0 -10px;
+    /* animaition css 작업 */
+      
     &.own{
       flex-grow: 0;
       margin: 0 10px;
       max-width: 700px;
-      margin-bottom: -10px;
+      margin-bottom: -5px;
     }
     &.two{
       padding: 20px 0px;
       flex-grow: 1;
       margin: 0 10px;
       max-width: 700px;
-      margin-bottom: -10px;
+      margin-bottom: -5px;
     }
   `,
   // skeleton box 의 스타일 컴포넌트
@@ -87,6 +99,39 @@ const S = {
     height: 100px;
     border-radius: 3px;
     background-color: rgb(204, 204, 204);
+    overflow: hidden;
+  position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: linear-gradient(90deg, transparent, #E9E9E9, transparent);
+        animation: ${loading} 1.5s infinite linear;
+      }
+  `,
+  // skeleton circle 의 스타일 컴포넌트
+  Circle: styled.div`
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(204, 204, 204);
+    overflow: hidden;
+  position: relative;
+  &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: linear-gradient(90deg, transparent, #E9E9E9, transparent);
+        animation: ${loading} 1.5s infinite linear;
+  }
   `,
   // skeleton title 의 스타일 컴포넌트
   Title: styled.div`
@@ -96,19 +141,45 @@ const S = {
     width: 30%;
     min-width: 100px;
     margin-bottom: 10px;
+    overflow: hidden;
+  position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: linear-gradient(90deg, transparent, #E9E9E9, transparent);
+        animation: ${loading} 1.5s infinite linear;
+    }
   `,
   // skeleton text 의 스타일 컴포넌트
   Text: styled.div`
   height: 10px;
-    border-radius: 3px;
-    background-color: rgb(204, 204, 204);
-    width: 100%;
-    margin-bottom: 5px;
+  border-radius: 3px;
+  background-color: rgb(204, 204, 204);
+  width: 100%;
+  margin-bottom: 5px;
+  overflow: hidden;
+  position: relative;
     &:last-child{
       height: 10px;
     border-radius: 5px;
     background-color: rgb(204, 204, 204);
     width: 70%;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: linear-gradient(90deg, transparent, #E9E9E9, transparent);
+        animation: ${loading} 1.5s infinite linear;
     }
   `,
 };
