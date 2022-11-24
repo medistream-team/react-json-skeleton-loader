@@ -5,7 +5,7 @@ interface userPropsDataType {
   primaryColor: string,
   secondaryColor: string,
   defaultSizes: DefaultSizeType,
-  content: string[][]
+  content: string[][] | string[]
 }
 
 interface DefaultSizeType {
@@ -25,7 +25,7 @@ const SkeletonLoader: React.FC<userPropsDataType> = (props: userPropsDataType): 
     const isNestedArray = ((_content: string[][] | string[]) => {
       return Array.isArray(_content) ? _content.some(Array.isArray) : false;
     })(content)
-
+    // 배열이 하나일때 배열을 하나 감싸주면 됨
     setSkeletonLoader(isNestedArray ? content : [content]);
   }, [])
 
