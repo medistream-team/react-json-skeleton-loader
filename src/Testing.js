@@ -1,18 +1,23 @@
 import SkeletonLoader from './SkeletonLoader'
 
 
-const Testing= () => {
+const Testing = () => {
 
     return (
         <div>
             <SkeletonLoader
-                primaryColor= 'rgb(255, 255, 255)'
-                secondaryColor= '#ddd'
-                defaultSizes= {{
+                defaultSizes={{
                     box: 100,
                     circle: 100
-                    }}
-                content={[["box", "title + text:3"], ["text:5"]]}
+                }}
+                options={{
+                    speed: 0.5,
+                    radius: 30,
+                    primaryColor: '#ffb0b0',
+                    secondaryColor: '#4c8bf5',
+                    // animation: false
+                }}
+                content={[["box", "title + text:5"], ["text:5"]]}
             />
         </div>
     )
