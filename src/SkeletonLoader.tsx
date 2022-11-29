@@ -48,12 +48,9 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
   const boxContainer = (InitialValue: string) => {
     // item의 요소들 중에 "box" 가 존재할 경우
     if (InitialValue.includes("box")) {
-      // boxWidth 와 boxHeight 는 기본적으로 default 값이 들어가게 되고 사용자가 content value 로 box: 100/200 과 같은 형식을 작성했을경우
-      // 콜론 뒤에 오는 숫자들이 각각 넓이와 높이가 되어야 한다. 그러기 위해서는 box: 100/200 이 존재할 경우 해당 Number 로 넓이와 높이를 바꿔주어야한다.
       return <S.Box
         boxWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}px` : `${defaultSizes.box}px`}
         boxHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}px` : `${defaultSizes.box}px`}
-        // 밑의 속성들의 값이 들어오지 않을때는 default 값을 지정 해주어야함
         primaryColor={`${options.primaryColor}`}
         secondaryColor={`linear-gradient(90deg, transparent, ${options.secondaryColor}, transparent)`}
         speed={`${options.animation ? options.speed : 0}s infinite linear`}
@@ -81,7 +78,6 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
       .map((TitleAndTextContents, index) => (titleAndTextContainer(TitleAndTextContents, index)));
   }
 
-  // bh: 별도의 컴포넌트로 빼도 되지 않나?
   const titleAndTextContainer = (TitleAndTextContents: string, index: number) => {
     // item의 요소들 중에 "title" 이 존재할 경우
     if (TitleAndTextContents.includes("title")) {
@@ -112,11 +108,10 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
 
   return (
     <div>
-      {/* <button onClick={buttonHandler}>버튼</button> */}
       {/* skeletonLoader 안의 값으로 배열들이 있고 해당 배열 은 map 메소드를 이용해 item 으로 취급된다. 각 item 의 값 안에 'box','title', 'text' 등 이 존재할 경우에 각각의 스타일을 가진 요소들이 생성이 되는 로직 // item = ['box', 'title:5']*/}
-      {content?.map((item: string[], index: number) => (
+      {content && content.map((item: string[], index: number) => (
         <S.Total key={index}>
-          {item?.map((element: string, index) => (
+          {item.map((element: string, index) => (
             <S.Container
               className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
               key={index}
@@ -264,8 +259,8 @@ const S = {
     &:last-child{
       height: 10px;
       border-radius: ${({ radius }) => radius || '5px'};
-    background-color: ${({ primaryColor }) => primaryColor};
-    width: 70%;
+      background-color: ${({ primaryColor }) => primaryColor};
+      width: 70%;
     }
     &::after{
         content: '';

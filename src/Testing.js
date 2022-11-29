@@ -11,7 +11,7 @@ const Testing = () => {
                     circle: 100
                 }}
                 options={{
-                    speed: 0.5,
+                    speed: 2,
                     radius: 30,
                     primaryColor: '#ffb0b0',
                     secondaryColor: '#4c8bf5',
