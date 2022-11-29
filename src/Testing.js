@@ -17,7 +17,8 @@ const Testing = () => {
                     secondaryColor: '#4c8bf5',
                     // animation: false
                 }}
-                content={[["box", "title + text:5"], ["text:5"]]}
+                // content={[["box", "title + text:5"], ["text:5"]]}
+                content={["box", "title + text:5"]}
             />
         </div>
     )

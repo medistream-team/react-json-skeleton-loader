@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 interface UserPropsDataType {
   defaultSizes: DefaultSizeType,
-  content: string[][],
+  content: string[][] | string[],
   options: OptionsType,
-
 }
+
 // interface || type
 interface DefaultSizeType {
   box: number,
@@ -30,6 +30,8 @@ const DEFAULT_OPTIONS: OptionsType = {
   radius: 5,
 }
 
+
+
 // skeleton-loader/react
 const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): JSX.Element => {
   const { defaultSizes, content, options: op } = props;
@@ -42,8 +44,8 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
   // 렉시컬 -> 리액트에서 사용하기 편한 에디터 
 
   // 해야할 일
-  // 4. 배열이 하나일때 정상 작동
-  // 5. npm 작업
+  // 1. 배열이 하나일때 정상 작동 -> 됐을때 commit
+  // 2. npm 작업
 
   const boxContainer = (InitialValue: string) => {
     // item의 요소들 중에 "box" 가 존재할 경우
@@ -106,12 +108,26 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
     }
   }
 
+
   return (
     <div>
       {/* skeletonLoader 안의 값으로 배열들이 있고 해당 배열 은 map 메소드를 이용해 item 으로 취급된다. 각 item 의 값 안에 'box','title', 'text' 등 이 존재할 경우에 각각의 스타일을 가진 요소들이 생성이 되는 로직 // item = ['box', 'title:5']*/}
-      {content && content.map((item: string[], index: number) => (
-        <S.Total key={index}>
-          {item.map((element: string, index) => (
+      {/* Array.isArray(content[0]) */}
+      {Array.isArray(content[0]) ?
+        (content as string[][]).map((item: string[], index: number) => (
+          <S.Total key={index}>
+            {item.map((element: string, index) => (
+              <S.Container
+                className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
+                key={index}
+              >
+                {boxContainer(element)}
+              </S.Container>
+            ))}
+          </S.Total>
+        )) :
+        <S.Total>
+          {(content as string[]).map((element: string, index) => (
             <S.Container
               className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
               key={index}
@@ -120,7 +136,7 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
             </S.Container>
           ))}
         </S.Total>
-      ))}
+      }
     </div>
   );
 };
