@@ -31,21 +31,26 @@ const DEFAULT_OPTIONS: OptionsType = {
 }
 
 
+// 패키지 이름 = react-json-skeleton-loder
 
 // skeleton-loader/react
 const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): JSX.Element => {
-  const { defaultSizes, content, options: op } = props;
+  const { defaultSizes, content, options: optionsitem } = props;
   const options: OptionsType = {
     ...DEFAULT_OPTIONS,
-    ...op,
+    ...optionsitem,
   };
+  // const content: string[][] = [];
+  // Array.isArray(co[0])
+  // co.forEach(item => content.push(item as string[]));
+  // content.push(co as string[]);
 
   // 에디터 사용 하는법 공부 -> 문서화를 하기 위한 에디터
   // 렉시컬 -> 리액트에서 사용하기 편한 에디터 
 
   // 해야할 일
-  // 1. 배열이 하나일때 정상 작동 -> 됐을때 commit
-  // 2. npm 작업
+  // 1. npm 작업
+  // 2. 문서화 작업
 
   const boxContainer = (InitialValue: string) => {
     // item의 요소들 중에 "box" 가 존재할 경우
@@ -107,7 +112,6 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
       }
     }
   }
-
 
   return (
     <div>
