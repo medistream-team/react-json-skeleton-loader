@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 interface UserPropsDataType {
   defaultSizes: DefaultSizeType,
-  content: string[][] | string[],
+  content: string[][],
   options: OptionsType,
-}
 
+}
 // interface || type
 interface DefaultSizeType {
   box: number,
@@ -30,27 +30,12 @@ const DEFAULT_OPTIONS: OptionsType = {
   radius: 5,
 }
 
-
-// 패키지 이름 = react-json-skeleton-loder
-
-// skeleton-loader/react
-const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): JSX.Element => {
+const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): JSX.Element => {
   const { defaultSizes, content, options: optionsitem } = props;
   const options: OptionsType = {
     ...DEFAULT_OPTIONS,
     ...optionsitem,
   };
-  // const content: string[][] = [];
-  // Array.isArray(co[0])
-  // co.forEach(item => content.push(item as string[]));
-  // content.push(co as string[]);
-
-  // 에디터 사용 하는법 공부 -> 문서화를 하기 위한 에디터
-  // 렉시컬 -> 리액트에서 사용하기 편한 에디터 
-
-  // 해야할 일
-  // 1. npm 작업
-  // 2. 문서화 작업
 
   const boxContainer = (InitialValue: string) => {
     // item의 요소들 중에 "box" 가 존재할 경우
@@ -116,22 +101,9 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
   return (
     <div>
       {/* skeletonLoader 안의 값으로 배열들이 있고 해당 배열 은 map 메소드를 이용해 item 으로 취급된다. 각 item 의 값 안에 'box','title', 'text' 등 이 존재할 경우에 각각의 스타일을 가진 요소들이 생성이 되는 로직 // item = ['box', 'title:5']*/}
-      {/* Array.isArray(content[0]) */}
-      {Array.isArray(content[0]) ?
-        (content as string[][]).map((item: string[], index: number) => (
-          <S.Total key={index}>
-            {item.map((element: string, index) => (
-              <S.Container
-                className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
-                key={index}
-              >
-                {boxContainer(element)}
-              </S.Container>
-            ))}
-          </S.Total>
-        )) :
-        <S.Total>
-          {(content as string[]).map((element: string, index) => (
+      {content && content.map((item: string[], index: number) => (
+        <S.Total key={index}>
+          {item.map((element: string, index) => (
             <S.Container
               className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
               key={index}
@@ -140,7 +112,7 @@ const SkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataType): 
             </S.Container>
           ))}
         </S.Total>
-      }
+      ))}
     </div>
   );
 };
@@ -151,10 +123,6 @@ const loading = keyframes`
     transform: translateX(100%);
   }
 `;
-
-// ${(props) => props.color  형식으로  props 전달
-
-// 스타일 컴포넌트 들여쓰기 확인하여 커밋
 
 interface StyledType {
   readonly boxWidth?: string;
@@ -205,7 +173,6 @@ const S = {
   `,
   // skeleton box 의 스타일 컴포넌트
   Box: styled.div <StyledType>`
-  /* box의 크기가 props 로 전달 되면서 사용자가 변경된 값에 따라 변경이 되어야함 */
     width:${({ boxWidth }) => boxWidth};
     height:${({ boxHeight }) => boxHeight};
     border-radius: ${({ radius }) => radius};
@@ -296,4 +263,4 @@ const S = {
   `,
 };
 
-export default SkeletonLoader;
+export default JsonSkeletonLoader;
