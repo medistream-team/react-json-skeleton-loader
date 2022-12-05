@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.skeleton-loader-img{
+    width: 280px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-default{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+    background-color: #f9f9f9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main-section-default{
+    width: 700px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-section-default-skeletonloader{
+    margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-section-default-textarea{
+    width: 700px;
+    height: 150px;
+    resize: none;
+    border: 1px solid lightgray;
+}
+
+.section-getting-started{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.section-examples{
+    display: felx;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+
+.getting-started-install{
+    max-width: 700px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.getting-started-install-code{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 18px;
+}
+
+.npm-name{
+    color: rgb(124, 179, 141)
+}
+
+.getting-started-import{
+    max-width: 700px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.getting-started-import-code{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 18px;
+}
+
+/* example 자리 */
+/* example 자리 */
+/* example 자리 */
+/* example 자리 */
+
+.section-properties{
+    background-color: #f9f9f9;
+}
+
+.options-name{
+    margin-bottom: 10px;
+}
+
+.section-properties-container{
+    max-width: 700px;
+    padding: 0 30px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.options-container-item{
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.options-code{
+    display: block;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 18px;
+    white-space: pre;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+    background-color: #313236;
+}
+
+.footer-text{
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #fff;
+    text-align: center;
 }
