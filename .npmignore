@@ -1,11 +1,4 @@
-
-# npm
 node_modules/
-
-# dev
-src
-.gitignore
+# src/
+public/
 tsconfig.json
-
-# GIT
-.git

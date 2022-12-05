@@ -3,8 +3,7 @@ import styled, { keyframes } from "styled-components";
 interface UserPropsDataType {
   defaultSizes: DefaultSizeType,
   content: string[][],
-  options: OptionsType,
-
+  options: OptionsType
 }
 // interface || type
 interface DefaultSizeType {
@@ -36,6 +35,10 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
     ...DEFAULT_OPTIONS,
     ...optionsitem,
   };
+  // const defaultSizes : UserPropsDataType = {
+  //   ...DEFAULT_USERPROPSDATATYPE,
+  //   ...size
+  // }
 
   const boxContainer = (InitialValue: string) => {
     // item의 요소들 중에 "box" 가 존재할 경우
