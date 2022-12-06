@@ -7,7 +7,6 @@ const App = () => {
     [['box', 'title + text:4'], ['text:3']]
   )
 
-
   return (
     <>
       <header className='header'>
@@ -52,47 +51,58 @@ const App = () => {
         </section>
         <section className='section-examples'>
           <h2>Examples</h2>
-          <h3>Text with thumbnail</h3>
-          <div>
-            <input type='text' />
-            <JsonSkeletonLoader
-              defaultSizes={{
-                box: 100,
-                circle: 100,
-              }}
-              content={[['box', 'title + text:3']]} />
+          <h3 className='section-examples-text'>
+            Text with thumbnail
+          </h3>
+          <div className='section-examples-temp'>
+            <div className='temp-json-skeleton-loader'>
+              <JsonSkeletonLoader
+                defaultSizes={{
+                  box: 50,
+                  circle: 100,
+                }}
+                content={[['box', 'text:2']]} />
+            </div>
+            <textarea className='temp-textarea' />
           </div>
 
-          <h3>Text with avatar</h3>
-          <div>
-            <input type='text' />
-            <JsonSkeletonLoader
-              defaultSizes={{
-                box: 100,
-                circle: 100,
-              }}
-              content={[['circle', 'title + text:3']]} />
+          <h3 className='section-examples-text'>Text with avatar</h3>
+          <div className='section-examples-temp'>
+            <div className='temp-json-skeleton-loader'>
+              <JsonSkeletonLoader
+                defaultSizes={{
+                  box: 50,
+                  circle: 100,
+                }}
+                content={[['box', 'text:2']]} />
+            </div>
+            <textarea className='temp-textarea' />
           </div>
 
-          <h3>Text with figure</h3>
-          <div>
-            <input type='text' />
-            <JsonSkeletonLoader
-              defaultSizes={{
-                box: 100,
-                circle: 100,
-              }}
-              content={[['box', 'title + text:3']]} />
+          <h3 className='section-examples-text'>Text with figure</h3>
+          <div className='section-examples-temp'>
+            <div className='temp-json-skeleton-loader'>
+              <JsonSkeletonLoader
+                defaultSizes={{
+                  box: 50,
+                  circle: 100,
+                }}
+                content={[['box', 'text:2']]} />
+            </div>
+            <textarea className='temp-textarea' />
           </div>
-          <div>
-            <input type='text' />
-            <JsonSkeletonLoader
-              defaultSizes={{
-                box: 100,
-                circle: 100,
-              }}
-              content={[['box', 'title + text:3']]} />
+          <div className='section-examples-temp'>
+            <div className='temp-json-skeleton-loader'>
+              <JsonSkeletonLoader
+                defaultSizes={{
+                  box: 50,
+                  circle: 100,
+                }}
+                content={[['box', 'text:2']]} />
+            </div>
+            <textarea className='temp-textarea' />
           </div>
+
         </section>
         <section className='section-properties'>
           <div className='section-properties-container'>
