@@ -1,0 +1,172 @@
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.skeleton-loader-img{
+    width: 280px;
+}
+
+.section-default{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+    background-color: #f9f9f9;
+}
+
+.main-section-default{
+    width: 700px;
+}
+
+.main-section-default-skeletonloader{
+    margin-bottom: 40px;
+}
+
+.main-section-default-textarea{
+    width: 700px;
+    height: 150px;
+    resize: none;
+    border: 1px solid lightgray;
+}
+
+.section-getting-started{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.section-examples{
+    display: felx;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+
+.getting-started-install{
+    max-width: 700px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.getting-started-install-code{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 18px;
+}
+
+.npm-name{
+    color: rgb(124, 179, 141)
+}
+
+.getting-started-import{
+    max-width: 700px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.getting-started-import-code{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 18px;
+}
+
+/* example 자리 */
+/* example 자리 */
+
+.section-examples-text{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.section-examples{
+    max-width: 700px;
+    padding: 50px 30px;
+    margin: 0 auto;
+}
+.section-examples-temp{
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid #ddd;   
+    margin-top: 20px 
+}
+
+.temp-json-skeleton-loader{
+    flex: 1 1 60%;
+    padding: 20px;
+    border: 0;
+    border-left: 1px solid #ddd;
+}
+
+.temp-textarea{
+    flex: 1 0 40%;
+    border: 0;
+    width: 100%;
+    height: 170px;
+    resize: none;
+}
+
+
+/* example 자리 */
+/* example 자리 */
+
+.section-properties{
+    background-color: #f9f9f9;
+}
+
+.options-name{
+    margin-bottom: 10px;
+}
+
+.section-properties-container{
+    max-width: 700px;
+    padding: 0 30px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.options-container-item{
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.options-code{
+    display: block;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #666;
+    font-size: 18px;
+    white-space: pre;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+    background-color: #313236;
+}
+
+.footer-text{
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #fff;
+    text-align: center;
+}

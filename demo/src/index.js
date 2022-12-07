@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SkeletonLoader from './SkeletonLoader';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <SkeletonLoader />
-);
+root.render(<App />);
