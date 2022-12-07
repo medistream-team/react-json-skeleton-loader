@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 interface UserPropsDataType {
   defaultSizes: DefaultSizeType,
-  content: string[][],
+  content: string[][] | string[]
   options: OptionsType
 }
 // interface || type
@@ -104,9 +104,21 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
   return (
     <div>
       {/* skeletonLoader 안의 값으로 배열들이 있고 해당 배열 은 map 메소드를 이용해 item 으로 취급된다. 각 item 의 값 안에 'box','title', 'text' 등 이 존재할 경우에 각각의 스타일을 가진 요소들이 생성이 되는 로직 // item = ['box', 'title:5']*/}
-      {content && content.map((item: string[], index: number) => (
-        <S.Total key={index}>
-          {item.map((element: string, index) => (
+      {Array.isArray(content[0]) ?
+        (content as string[][]).map((item: string[], index: number) => (
+          <S.Total key={index}>
+            {item.map((element: string, index) => (
+              <S.Container
+                className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
+                key={index}
+              >
+                {boxContainer(element)}
+              </S.Container>
+            ))}
+          </S.Total>
+        )) :
+        <S.Total>
+          {(content as string[]).map((element: string, index) => (
             <S.Container
               className={(element.includes('box') || element.includes('circle') || element.includes('blank')) ? 'own' : 'two'}
               key={index}
@@ -115,7 +127,7 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
             </S.Container>
           ))}
         </S.Total>
-      ))}
+      }
     </div>
   );
 };
