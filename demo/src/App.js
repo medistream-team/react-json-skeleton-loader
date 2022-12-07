@@ -1,12 +1,21 @@
 import JsonSkeletonLoader from 'react-json-skeleton-loader'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 
 const App = () => {
-  const [defaultSkeletonValue, setDefaultSkeletonValue] = useState('')
-  const [defaultSkeleton, setDefaultSkeleton] = useState([])
+  const DEFAULT_SKELETON_VALUE = `[["box", "title + text:3"], ["text:3"]]`
+  const DEFAULT_THUMBNAIL_VALUE = `[["box", "text:2"]]`
+  const DEFAULT_AVATAR_VALUE = `[["circle", "text:2"]]`
+  const DEFAULT_FIGURE_VALUE = `[["box:120/90", "text:2"]]`
+  const DEFAULT_SECOND_FIGURE_VALUE = `[["box:90/120", "text:2"]]`
+  const [defaultSkeletonValue, setDefaultSkeletonValue] = useState(JSON.parse(DEFAULT_SKELETON_VALUE))
 
-  useEffect(() => setDefaultSkeleton(defaultSkeleton.concat(defaultSkeletonValue)), [])
+
+
+  const [thumbnail, setThumbnail] = useState(JSON.parse(DEFAULT_THUMBNAIL_VALUE))
+  const [avatar, setAvatar] = useState(JSON.parse(DEFAULT_AVATAR_VALUE))
+  const [figure, setFigure] = useState(JSON.parse(DEFAULT_FIGURE_VALUE))
+  const [secondFigure, setSecondFigure] = useState(JSON.parse(DEFAULT_SECOND_FIGURE_VALUE))
 
   return (
     <>
@@ -28,13 +37,13 @@ const App = () => {
                   box: 100,
                   circle: 100,
                 }}
-                content={[['box', 'title + text:5'], ['text:3']]}
+                content={defaultSkeletonValue}
               />
             </div>
             <textarea
               className='main-section-default-textarea'
-              defaultValue={`[['box', 'title + text:5']], ['text:3']`}
-              onChange={e => setDefaultSkeletonValue(e.target.value)}
+              defaultValue={DEFAULT_SKELETON_VALUE}
+              onChange={e => setDefaultSkeletonValue(JSON.parse(e.target.value))}
             />
           </div>
         </section>
@@ -64,9 +73,13 @@ const App = () => {
                   box: 50,
                   circle: 100,
                 }}
-                content={[['box', 'text:2']]} />
+                content={thumbnail} />
             </div>
-            <textarea className='temp-textarea' />
+            <textarea
+              className='temp-textarea'
+              defaultValue={DEFAULT_THUMBNAIL_VALUE}
+              onChange={(e) => setThumbnail(JSON.parse(e.target.value))}
+            />
           </div>
 
           <h3 className='section-examples-text'>Text with avatar</h3>
@@ -75,11 +88,15 @@ const App = () => {
               <JsonSkeletonLoader
                 defaultSizes={{
                   box: 50,
-                  circle: 100,
+                  circle: 50,
                 }}
-                content={[['box', 'text:2']]} />
+                content={avatar} />
             </div>
-            <textarea className='temp-textarea' />
+            <textarea
+              className='temp-textarea'
+              defaultValue={DEFAULT_AVATAR_VALUE}
+              onChange={(e) => setAvatar(JSON.parse(e.target.value))}
+            />
           </div>
 
           <h3 className='section-examples-text'>Text with figure</h3>
@@ -90,9 +107,13 @@ const App = () => {
                   box: 50,
                   circle: 100,
                 }}
-                content={[['box', 'text:2']]} />
+                content={figure} />
             </div>
-            <textarea className='temp-textarea' />
+            <textarea
+              className='temp-textarea'
+              defaultValue={DEFAULT_FIGURE_VALUE}
+              onChange={(e) => setFigure(JSON.parse(e.target.value))}
+            />
           </div>
           <div className='section-examples-temp'>
             <div className='temp-json-skeleton-loader'>
@@ -101,9 +122,13 @@ const App = () => {
                   box: 50,
                   circle: 100,
                 }}
-                content={[['box', 'text:2']]} />
+                content={secondFigure} />
             </div>
-            <textarea className='temp-textarea' />
+            <textarea
+              className='temp-textarea'
+              defaultValue={DEFAULT_SECOND_FIGURE_VALUE}
+              onChange={(e) => setSecondFigure(JSON.parse(e.target.value))}
+            />
           </div>
 
         </section>
