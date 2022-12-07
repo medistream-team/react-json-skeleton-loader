@@ -22,7 +22,7 @@ const App = () => {
       <header className='header'>
         <img
           className='skeleton-loader-img'
-          src='/img/SkeletonLoader.svg'
+          src='/img/jsk-logo.png'
           alt='skeletonLoaderLogo'
         />
         <h1 className='skeleton-loader-text'>React Json Skeleton Loader</h1>
