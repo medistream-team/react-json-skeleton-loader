@@ -1,11 +1,12 @@
 import JsonSkeletonLoader from 'react-json-skeleton-loader'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 const App = () => {
-  const [defaultSkeleton, setDefaultSkeleton] = useState(
-    [['box', 'title + text:4'], ['text:3']]
-  )
+  const [defaultSkeletonValue, setDefaultSkeletonValue] = useState('')
+  const [defaultSkeleton, setDefaultSkeleton] = useState([])
+
+  useEffect(() => setDefaultSkeleton(defaultSkeleton.concat(defaultSkeletonValue)), [])
 
   return (
     <>
@@ -27,11 +28,13 @@ const App = () => {
                   box: 100,
                   circle: 100,
                 }}
-                content={defaultSkeleton}
+                content={[['box', 'title + text:5'], ['text:3']]}
               />
             </div>
             <textarea
               className='main-section-default-textarea'
+              defaultValue={`[['box', 'title + text:5']], ['text:3']`}
+              onChange={e => setDefaultSkeletonValue(e.target.value)}
             />
           </div>
         </section>
