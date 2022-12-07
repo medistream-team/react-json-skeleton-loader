@@ -25,7 +25,6 @@ const App = () => {
           src='/img/jsk-logo.png'
           alt='skeletonLoaderLogo'
         />
-        <h1 className='skeleton-loader-text'>React Json Skeleton Loader</h1>
         <div className='skeleton-loader-link'>A loader component that can be designed with simple markup. - <a href='https://github.com/medistream-team/react-skeleton-loader'><strong>GitHub</strong></a></div>
       </header>
       <main>
