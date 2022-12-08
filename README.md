@@ -1,6 +1,6 @@
-<img width="100%" src="demo/src/assets/logo.png">
+<img width="100%" src="demo/public/img/jsk-logo.png">
 
-[![Deploy](https://github.com/medistream-team/v-skeleton-loader/actions/workflows/deploy-demo.yml/badge.svg?branch=main)](https://github.com/medistream-team/v-skeleton-loader/actions/workflows/deploy-demo.yml) [![Npm Publish](https://github.com/medistream-team/v-skeleton-loader/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/medistream-team/v-skeleton-loader/actions/workflows/npm-publish.yml)
+[![Deploy]() [![Npm Publish](https://www.npmjs.com/package/react-json-skeleton-loader)](https://github.com/medistream-team/v-skeleton-loader/actions/workflows/npm-publish.yml)
 
 ## [DEMO]()
 
