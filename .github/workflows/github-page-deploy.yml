@@ -5,7 +5,7 @@ on:
     branches: [ feature/deploy ]
 
 jobs:
-  build_test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +18,5 @@ jobs:
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./build          
