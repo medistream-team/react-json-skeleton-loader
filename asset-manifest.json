@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-json-skeleton-loader/static/css/main.01008bd8.css",
+    "main.js": "/react-json-skeleton-loader/static/js/main.6cfbf868.js",
+    "index.html": "/react-json-skeleton-loader/index.html",
+    "main.01008bd8.css.map": "/react-json-skeleton-loader/static/css/main.01008bd8.css.map",
+    "main.6cfbf868.js.map": "/react-json-skeleton-loader/static/js/main.6cfbf868.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.01008bd8.css",
+    "static/js/main.6cfbf868.js"
+  ]
+}
