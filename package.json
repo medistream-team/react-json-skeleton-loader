@@ -1,18 +1,27 @@
 {
   "name": "react-json-skeleton-loader",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.2.3",
-    "@types/node": "^18.11.9",
+    "styled-components": "^5.3.6",
+    "styled-reset": "^4.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/preset-react": "^7.18.6",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/styled-components": "^5.1.26",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.3",
     "react-scripts": "5.0.1",
-    "styled-reset": "^4.4.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,15 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/preset-react": "^7.18.6",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
-    "@types/styled-components": "^5.1.26",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^4.9.3"
   }
 }
