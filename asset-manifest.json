@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-skeleton-loader/static/css/main.01008bd8.css",
-    "main.js": "/react-skeleton-loader/static/js/main.681fd00f.js",
+    "main.js": "/react-skeleton-loader/static/js/main.e16083e9.js",
     "index.html": "/react-skeleton-loader/index.html",
     "main.01008bd8.css.map": "/react-skeleton-loader/static/css/main.01008bd8.css.map",
-    "main.681fd00f.js.map": "/react-skeleton-loader/static/js/main.681fd00f.js.map"
+    "main.e16083e9.js.map": "/react-skeleton-loader/static/js/main.e16083e9.js.map"
   },
   "entrypoints": [
     "static/css/main.01008bd8.css",
-    "static/js/main.681fd00f.js"
+    "static/js/main.e16083e9.js"
   ]
 }
