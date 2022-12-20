@@ -22,7 +22,7 @@ const App = () => {
       <header className='header'>
         <img
           className='skeleton-loader-img'
-          src='/img/jsk-logo.png'
+          src='/react-skeleton-loader/img/jsk-logo.png'
           alt='skeletonLoaderLogo'
         />
         <div className='skeleton-loader-link'>A loader component that can be designed with simple markup. - <a href='https://github.com/medistream-team/react-skeleton-loader'><strong>GitHub</strong></a></div>
