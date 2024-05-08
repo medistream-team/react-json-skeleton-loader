@@ -44,8 +44,8 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
     // item의 요소들 중에 "box" 가 존재할 경우
     if (InitialValue.includes("box")) {
       return <S.Box
-        boxWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : defaultSizes.box}
-        boxHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : defaultSizes.box}
+        boxWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : `${defaultSizes.box}`}
+        boxHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : `${defaultSizes.box}`}
         primaryColor={`${options.primaryColor}`}
         secondaryColor={`linear-gradient(90deg, transparent, ${options.secondaryColor}, transparent)`}
         speed={`${options.animation ? options.speed : 0}s infinite linear`}
@@ -55,8 +55,8 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
     // item의 요소들 중에 "circle" 가 존재할 경우
     if (InitialValue.includes("circle")) {
       return <S.Circle
-        circleWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : defaultSizes.circle}
-        circleHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : defaultSizes.circle}
+        circleWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : `${defaultSizes.circle}`}
+        circleHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : `${defaultSizes.circle}`}
         primaryColor={`${options.primaryColor}`}
         secondaryColor={`linear-gradient(90deg, transparent, ${options.secondaryColor}, transparent)`}
         speed={`${options.animation ? options.speed : 0}s infinite linear`}
