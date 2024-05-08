@@ -44,8 +44,8 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
     // item의 요소들 중에 "box" 가 존재할 경우
     if (InitialValue.includes("box")) {
       return <S.Box
-        boxWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}px` : `${defaultSizes.box}px`}
-        boxHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}px` : `${defaultSizes.box}px`}
+        boxWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : defaultSizes.box}
+        boxHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : defaultSizes.box}
         primaryColor={`${options.primaryColor}`}
         secondaryColor={`linear-gradient(90deg, transparent, ${options.secondaryColor}, transparent)`}
         speed={`${options.animation ? options.speed : 0}s infinite linear`}
@@ -55,8 +55,8 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
     // item의 요소들 중에 "circle" 가 존재할 경우
     if (InitialValue.includes("circle")) {
       return <S.Circle
-        circleWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}px` : `${defaultSizes.circle}px`}
-        circleHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}px` : `${defaultSizes.circle}px`}
+        circleWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : defaultSizes.circle}
+        circleHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : defaultSizes.circle}
         primaryColor={`${options.primaryColor}`}
         secondaryColor={`linear-gradient(90deg, transparent, ${options.secondaryColor}, transparent)`}
         speed={`${options.animation ? options.speed : 0}s infinite linear`}
@@ -65,8 +65,8 @@ const JsonSkeletonLoader: React.FC<UserPropsDataType> = (props: UserPropsDataTyp
     // item의 요소들 중에 "brink" 가 존재할 경우
     if (InitialValue.includes("blank")) {
       return <S.Blank 
-      blankWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}px` : `100px`}
-      blankHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}px` : `100px`}
+      blankWidth={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[0]}` : `100px`}
+      blankHeight={InitialValue.includes(':') ? `${InitialValue.split(':')[1].trim().split('/')[1]}` : `100px`}
       />;
     }
     // title + text:x 와같은 형식이 존재할 경우 + 를 제외하고 title 과 text 요소가 생성됨 => text 같은경우에는 뒤으 Number와같은 수의 요소가 생성됨

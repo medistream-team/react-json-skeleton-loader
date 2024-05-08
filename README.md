@@ -29,8 +29,8 @@ const temp = () => {
   return (
     <JsonSkeletonLoader
       defaultSize={{
-        box: 100px,
-        circle: 100px
+        box: '100px',
+        circle: '100px'
       }}
       content={[['box', 'title + text:3'], [text:3]]}
       />
@@ -45,8 +45,8 @@ const temp = () => {
   return (
     <JsonSkeletonLoader
       defaultSize={{
-        box: 100px,
-        circle: 100px
+        box: '100px',
+        circle: '100px'
       }}
       content={[['box', 'blink', 'title + text:3'], ['text:3'], ['box', 'text:2']}
       />
@@ -65,8 +65,8 @@ const temp = () => {
   return (
     <JsonSkeletonLoader
       defaultSize={{
-        box: 100px,
-        circle: 100px
+        box: '100px',
+        circle: '100px'
       }}
       options={{
         speed: 0.5,
