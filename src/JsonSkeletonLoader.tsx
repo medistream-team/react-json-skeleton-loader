@@ -145,6 +145,8 @@ const loading = keyframes`
 interface StyledType {
   readonly boxWidth?: string;
   readonly boxHeight?: string;
+  readonly blankWidth?: string;
+  readonly blankHeight?: string;
   readonly circleWidth?: string;
   readonly circleHeight?: string;
   readonly primaryColor?: string;
@@ -181,7 +183,7 @@ const S = {
     }
   `,
   // skeleton blank 의 스타일 컴포넌트
-  Blank: styled.div`
+  Blank: styled.div <StyledType>`
     width:${({ blankWidth }) => blankWidth};
     height:${({ blankHeight }) => blankHeight};
   `,
