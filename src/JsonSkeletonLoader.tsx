@@ -172,13 +172,11 @@ const S = {
     &.own{
       flex-grow: 0;
       margin: 0 10px;
-      margin-bottom: -5px;
     }
     &.two{
       padding: 20px 0px;
       flex-grow: 1;
       margin: 0 10px;
-      margin-bottom: -5px;
       align-content: center;
     }
   `,
